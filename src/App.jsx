@@ -1,3 +1,4 @@
+//Gitで管理中
 import { useState, useEffect } from "react";
 import { Button, Flex } from "@chakra-ui/react";
 import { supabase } from "./db/supabaseClient";
