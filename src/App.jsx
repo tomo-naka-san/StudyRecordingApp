@@ -37,7 +37,7 @@ function App() {
 
     //初回のレンダリング時にDBのデータを取得
     useEffect(() => {
-        fetchRecords()
+        fetchRecords();
     }, []);
 
     //supabase DB operations (INSERT INTO study-records(title, time) SET (param))
@@ -85,7 +85,7 @@ function App() {
 
     return (
         <>
-        <h1>学習記録一覧</h1>
+        <h1>学習記録アプリ</h1>
         <Flex alignItems='center' justifyContent='center'>
                 <div>
                     <h2>入力フォーム</h2>
@@ -97,22 +97,22 @@ function App() {
                     </div>
                     {error !== "" && <p style={{color: "red"}}>{error}</p>}
                     <Button colorScheme="teal" m='1' onClick={handleOnClickRegist}>登録</Button>         
-                <h1>学習記録</h1>
-                <table border='1'>
-                    <tbody>
-                        <tr>
-                            <th>学習内容</th>
-                            <th>学習時間</th>
-                        </tr>
-                        {records.map((record, index) => (
+                    <h2>学習記録</h2>
+                    <table border='1'>
+                        <tbody>
                             <tr>
-                                <td key={index}>{record.title}</td>
-                                <td key={index}>{record.time}時間</td>
-                                <td><Button colorScheme="teal" m='1' onClick={() => handleOnClickDelete(record.id)}>削除</Button></td>
+                                <th>学習内容</th>
+                                <th>学習時間</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
+                            {records.map((record, index) => (
+                                <tr>
+                                    <td key={index}>{record.title}</td>
+                                    <td key={index}>{record.time}時間</td>
+                                    <td><Button colorScheme="teal" m='1' onClick={() => handleOnClickDelete(record.id)}>削除</Button></td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
                 <div>
                     <p>総学習時間：{totalTime}時間</p>
                 </div>
