@@ -1,4 +1,4 @@
-//FireBaseに反映されるか確認
+//FireBaseとgithubが連携しているか確認
 import { useState, useEffect } from "react";
 import { Button, Flex } from "@chakra-ui/react";
 import { supabase } from "./db/supabaseClient";
