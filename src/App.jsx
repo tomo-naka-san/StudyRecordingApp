@@ -1,4 +1,3 @@
-//FireBaseとgithubが連携しているか確認
 import { useState, useEffect } from "react";
 import { Button, Flex } from "@chakra-ui/react";
 import { supabase } from "./db/supabaseClient";
@@ -90,10 +89,12 @@ function App() {
                 <div>
                     <h2>入力フォーム</h2>
                     <div>
-                        <label>学習記録：</label><input type="text" value={title} onChange={handleOnChangeTitle} placeholder="例 プログラミング"/>
+                        <label htmlFor="study-title">学習記録：</label>
+                        <input id="study-title" type="text" value={title} onChange={handleOnChangeTitle} placeholder="例 プログラミング"/>
                     </div>
                     <div>
-                        <label>学習時間：</label><input type="number" value={time} onChange={handleOnChangeTime} placeholder="例 2"/>
+                        <label htmlFor="study-time">学習時間：</label>
+                        <input id="study-time" type="number" value={time} onChange={handleOnChangeTime} placeholder="例 2"/>
                     </div>
                     {error !== "" && <p style={{color: "red"}}>{error}</p>}
                     <Button colorScheme="teal" m='1' onClick={handleOnClickRegist}>登録</Button>         
